@@ -1,0 +1,28 @@
+resource "aws_iam_role" "iam_role" {
+  name = "iam_role"
+
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
+
+  tags = {
+    tag-key = "iam_role"
+  }
+}
+
+resource "aws_iam_instance_profile" "iam_profile" {
+  name = "iam_profile"
+  role = "${aws_iam_role.iam_role.name}"
+}

@@ -1,0 +1,8 @@
+accesskey_id = "AKIAJLZDQKA2IGCVE6SA"
+secretkey = "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"
+region = "eu-west-2"
+ami = "ami-0fc841be1f929d7d1"
+instance = "t2.micro"
+keyname  = "awskeys"
+subnetid = "subnet-2ef84554"
+vpc_id   = "vpc-de1c73b6"
